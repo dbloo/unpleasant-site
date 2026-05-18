@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import {Resend} from "resend"
 import {db} from "@/db"
 
-import {contactSchema} from "@/lib/schemas"
+import {contactFormSchema} from "@/lib/validation"
 
 export const Route = createFileRoute('/api/contact/$')({
   component: RouteComponent,
@@ -23,9 +23,9 @@ async function POST({request}: {request: Request}) {
 
         
 
-        const parsed = contactSchema.safeParse(body);
+        const parsed = contactFormSchema.safeParse(body);
 
-    const {name, email, message } = parsed.data;
+   
 
          
     
@@ -37,12 +37,12 @@ async function POST({request}: {request: Request}) {
 
         html: `
             <h2></h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Email:</strong></p>
             <p><strong></p>
             <p><strong>Occasion:</p>
             <p><strong>Message:</strong></p>
-            <p>${message}</p>
+            <p></p>
       `,
 
     });
