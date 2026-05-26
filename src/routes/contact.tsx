@@ -1,5 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import {useForm} from '@tanstack/react-form'
+import {useState, useEffect} from 'react'
+import { Spinner } from '#/components/ui/spinner'
 
 import {
   Field,
@@ -11,9 +13,12 @@ import {
 import { Input } from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
 
-import { z } from 'zod'
+import { AnimatePresence, motion } from 'framer-motion'
+
+
 import { StyledButton } from '#/components/ui/button'
 import { contactFormSchema } from '../lib/validation'
+import { submitContactForm } from '../serverFunctions/contact'
 
 
 
@@ -26,6 +31,12 @@ export const Route = createFileRoute('/contact')({
 
 function RouteComponent() {
 
+    const [status, setStatus] = useState(0)
+    const [isLoading, setIsLoading] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
+
+
+
    
 
 const contactForm = useForm({
@@ -35,46 +46,77 @@ const contactForm = useForm({
     email: '',
     message: '',
   },
-  onSubmit: async (values) => {
+  onSubmit: async ({value}) => {
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      })
+                setIsLoading(true);
+                await submitContactForm({ data: value  as any })
+                setStatus(2)
+                contactForm.reset()
+                setIsLoading(false)
+            } catch (error) {
+                setIsLoading(false);
 
-      if (response.ok) {
-        alert('Message sent successfully!')
-        contactForm.reset()
-      } else {
-        alert('Failed to send message. Please try again later.')
-      }
-    } catch (error) {
-      console.error('Error sending message:', error)
-      alert('An error occurred. Please try again later.')
-    }
+                console.error('Error sending message:', error)
+                setStatus(1)
+            }
   }
 })
-  return (
-    <section className="w-screen h-auto lg:p-20 pt-20 p-5">
 
-        <div className="mt-10 w-full h-250 flex flex-col gap-5">
-        <h1 className = "lg:text-8xl text-6xl font-black text-amber-500">Reach Out.</h1>
-        <p>Interested in working with us? Feel free to drop a line!</p>
+useEffect(() => {
+  if (status === 2) {
+    setShowMessage(true);
+    const timer = setTimeout(() => setShowMessage(false), 3000); // disappears after 3s
+    return () => clearTimeout(timer);
+  }
+}, [status]);
+  return (
+    <section className="w-screen h-auto flex justify-center items-center lg:p-20 pt-20 p-5">
+
+        <div className="mt-10 lg:w-1/2 w-full  h-250 flex flex-col gap-5">
+        <div className = "lg:text-center">
+        <motion.h1 
+        initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+        
+        className = "lg:text-8xl text-6xl font-black text-amber-500">
+            
+            Reach Out.
+            
+            </motion.h1>
+        <motion.p 
+        
+        initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.12 }}
+            className="mt-5">
+                
+                Interested in working with us? Feel free to drop a line!
+                
+                </motion.p>
+        </div>
 
         <div className="w-full h-auto">
             <FieldSet>
                 
                 <FieldGroup>
-                    <p className='mt-10'>Name</p>
+                    <motion.p 
+
+                    initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.13 }}
+                    
+                    
+                    className='mt-10'>Name</motion.p>
                     <contactForm.Field name="name"
                     children = {(field) => {
                         const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
                         return(
                             <Field>
 
+                                <motion.div  initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.14 }} >
                                 <Input
                                     id= {field.name}
                                     name= {field.name}
@@ -85,8 +127,9 @@ const contactForm = useForm({
                                     type = "text"
                                     placeholder = "e.g John Doe"
                                     autoComplete = "off"
-                                    className = "text-lg border-amber-500"
+                                    className = "text-xl border-amber-500"
                                 />
+                                </motion.div>
 
                                 {isInvalid && <FieldError errors = {field.state.meta.errors}/>}
 
@@ -94,13 +137,24 @@ const contactForm = useForm({
                         )
                     }}/>
 
-                    <p className = "mt-5">Email</p>
+                    <motion.p 
+
+                    initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.15 }}
+                    
+                    
+                    className='mt-5'>Email</motion.p>
                     <contactForm.Field name="email"
                     children = {(field) => {
                         const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
                         return(
                             <Field>
 
+
+                                    <motion.div  initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.16 }} >
                                 <Input
                                     id= {field.name}
                                     name= {field.name}
@@ -111,22 +165,32 @@ const contactForm = useForm({
                                     type = "text"
                                     placeholder = "e.g john.doe@example.com"
                                     autoComplete = "off"
-                                    className = "text-lg border-amber-500"
+                                    className = "text-xl border-amber-500"
                                 />
-
+                        </motion.div>
                                 {isInvalid && <FieldError errors = {field.state.meta.errors}/>}
 
                             </Field>
                         )
                     }}/>
 
-                    <p className = "mt-5">Message</p>
+                    <motion.p 
+
+                    initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.17 }}
+                    
+                    
+                    className='mt-5'>Message</motion.p>
                     <contactForm.Field name="message"
                     children = {(field) => {
                         const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
                         return(
                             <Field>
 
+                            <motion.div  initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.18 }} >
                                 <Textarea
                                     id= {field.name}
                                     name= {field.name}
@@ -136,16 +200,34 @@ const contactForm = useForm({
                                     aria-invalid={isInvalid}
                                     placeholder = ""
                                     autoComplete = "off"
-                                    className = "text-lg mt-0 items-start border-amber-500 h-80"
+                                    className = "text-xl mt-0 items-start border-amber-500 h-50"
                                 />
+                                </motion.div>
 
-                                {isInvalid && <FieldError errors = {field.state.meta.errors}/>}
+                                {isInvalid  && <FieldError errors = {field.state.meta.errors}/>}
 
                             </Field>
                         )
                     }}/>
 
-                    <StyledButton type = "submit" onClick={contactForm.handleSubmit} className = "w-full" color='amber-500'>Submit</StyledButton>
+<motion.div  initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.19 }} >
+                    <StyledButton disabled = {isLoading} type = "submit" onClick={contactForm.handleSubmit} className = "w-full" color='amber-500'>{isLoading ? <Spinner/>: "Submit"}</StyledButton>
+                    </motion.div>
+                    {status == 1 && <p className = "text-red-500 mt-10">An error occurred. Please try again later.</p>}
+                    <AnimatePresence>
+                                {showMessage &&  <motion.p
+                                    layout
+                                    initial={{ y: -10, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                
+                                className = "text-center w-full z-1000 text-black mt-10">Message Sent! We'll reach out to you shortly.</motion.p>}
+                                </AnimatePresence>
+                    
+
 
 
                 </FieldGroup>

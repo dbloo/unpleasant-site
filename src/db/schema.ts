@@ -1,7 +1,15 @@
-import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
+import { pgTable, integer, text, timestamp } from 'drizzle-orm/pg-core'
 
-export const todos = pgTable('todos', {
-  id: serial().primaryKey(),
-  title: text().notNull(),
-  createdAt: timestamp('created_at').defaultNow(),
+export const contactFormSubmissions = pgTable('contact_form_submissions', {
+  id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
+  name: text().notNull(),
+  email: text().notNull(),
+  message: text().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+})
+
+export const emails = pgTable('emails', {
+  id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
+  email: text().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 })

@@ -75,6 +75,7 @@ function StyledButton({
   asChild = false,
   children,
   color,
+  params,
   to,
   type,
   onClick,
@@ -82,6 +83,7 @@ function StyledButton({
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
     to?:string
+    params?: any
   
   }) {
 
@@ -102,8 +104,8 @@ function StyledButton({
   }
 
   return (
-    <div className = " relative rounded-full  h-full">
-                        <motion.div
+    <span className = " relative rounded-full  h-full">
+                        <motion.span
                         animate={clicked ? { y: 5, x: 0 } : { y: 0, x: 0 }}
                         transition={
                           clicked
@@ -115,12 +117,17 @@ function StyledButton({
                       onPointerLeave={handlePointerLeave}
                       onPointerCancel={() => isClicked(false)} 
                       style={{ touchAction: "none" }} 
+                      
+                      className="relative inline-block z-10 w-full"
                         
                         >
-                        <Link to ={to}><Button type = {type} onClick = {onClick} variant = "styled" className = {`${className } select-none border border-${color} text-${color} absolute`}>{children}</Button></Link>
-                        </motion.div>
-                        <Button variant="styled"  type = {type} className={`${className } select-none border border-${color} absolute top-2 left-0 -z-1 bg-${color}`}>{children}</Button>
-                        </div>
+                        <Link params= {params} to ={to}><Button type = {type} onClick = {onClick} variant = "styled" className = {`${className }   z-10 select-none border border-${color} text-${color} `}>{children}</Button></Link>
+                        </motion.span>
+                        <Button 
+                        aria-hidden="true"
+                        tabIndex={-1}
+                        variant="styled"  type = {type} className={`${className } select-none border border-${color} absolute top-1 z-0 left-0  bg-${color}`}>{children}</Button>
+                        </span>
   )
 }
 

@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1779148287436,
+      "tag": "0000_spooky_taskmaster",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1779148450291,
+      "tag": "0001_daily_toad",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1779148878614,
+      "tag": "0002_regular_unus",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1779152954718,
+      "tag": "0003_salty_talon",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1779163613183,
+      "tag": "0004_superb_mulholland_black",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1779163649548,
+      "tag": "0005_chief_silver_sable",
+      "breakpoints": true
+    }
+  ]
+}

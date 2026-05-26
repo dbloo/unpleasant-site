@@ -10,15 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LookbookRouteImport } from './routes/lookbook'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiContactSplatRouteImport } from './routes/api/contact/$'
+import { Route as EventSlugRouteImport } from './routes/event/$slug'
 
 const LookbookRoute = LookbookRouteImport.update({
   id: '/lookbook',
   path: '/lookbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -41,9 +47,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiContactSplatRoute = ApiContactSplatRouteImport.update({
-  id: '/api/contact/$',
-  path: '/api/contact/$',
+const EventSlugRoute = EventSlugRouteImport.update({
+  id: '/event/$slug',
+  path: '/event/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -52,16 +58,18 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/lookbook': typeof LookbookRoute
-  '/api/contact/$': typeof ApiContactSplatRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/lookbook': typeof LookbookRoute
-  '/api/contact/$': typeof ApiContactSplatRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +77,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/lookbook': typeof LookbookRoute
-  '/api/contact/$': typeof ApiContactSplatRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -79,18 +88,27 @@ export interface FileRouteTypes {
     | '/about'
     | '/cart'
     | '/contact'
+    | '/events'
     | '/lookbook'
-    | '/api/contact/$'
+    | '/event/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/cart' | '/contact' | '/lookbook' | '/api/contact/$'
+  to:
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/contact'
+    | '/events'
+    | '/lookbook'
+    | '/event/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/cart'
     | '/contact'
+    | '/events'
     | '/lookbook'
-    | '/api/contact/$'
+    | '/event/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -98,8 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CartRoute: typeof CartRoute
   ContactRoute: typeof ContactRoute
+  EventsRoute: typeof EventsRoute
   LookbookRoute: typeof LookbookRoute
-  ApiContactSplatRoute: typeof ApiContactSplatRoute
+  EventSlugRoute: typeof EventSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -109,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/lookbook'
       fullPath: '/lookbook'
       preLoaderRoute: typeof LookbookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -139,11 +165,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/contact/$': {
-      id: '/api/contact/$'
-      path: '/api/contact/$'
-      fullPath: '/api/contact/$'
-      preLoaderRoute: typeof ApiContactSplatRouteImport
+    '/event/$slug': {
+      id: '/event/$slug'
+      path: '/event/$slug'
+      fullPath: '/event/$slug'
+      preLoaderRoute: typeof EventSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -154,8 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CartRoute: CartRoute,
   ContactRoute: ContactRoute,
+  EventsRoute: EventsRoute,
   LookbookRoute: LookbookRoute,
-  ApiContactSplatRoute: ApiContactSplatRoute,
+  EventSlugRoute: EventSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

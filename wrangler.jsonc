@@ -3,5 +3,19 @@
   "name": "unpleasant-site",
   "compatibility_date": "2025-09-02",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry"
+  "main": "@tanstack/react-start/server-entry",
+
+  
+  "d1_databases": [
+    {
+      "binding": "contact-form-submissions",
+      "database_name": "contact-form-submissions",
+      "database_id": "11deb4fb-124b-4a75-9ec1-66f9e360fcdc",
+      "migrations_dir": "drizzle/migrations"
+    }
+
+  ]
+
 }
+
+

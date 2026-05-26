@@ -1,8 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
+
 
 import appCss from '../styles.css?url'
 
@@ -37,20 +36,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <Navbar />
-      <body>
-        {children}
-        {/* <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        /> */}
+      <body style={{ overflowX: 'hidden' }}>
+        <Navbar />
+          {children}
         <Footer />
         <Scripts />
       </body>
