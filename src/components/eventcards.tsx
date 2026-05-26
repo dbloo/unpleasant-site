@@ -8,7 +8,7 @@ export const events = [
      location: "Riverset Studios, Miami, Florida",
      description: "We collabed with Florida's favorite traveling night market to bring you some local art.",
      about: ["How Bazaar, a traveling night market from Gainesville, Florida known for their incredible atmosphere and creative frevor, made its way down to Miami and was gracious enough to carve out a space for us to display 6 local artists. Achored at Riverset studios, an ex military hangar located on the outskirts of Downtown Miami, the night was filled with an assortment of vendors and artisinal goods, coupled with, activations and workshops in each room.",
-      "This was actually our first ever curation opportunity, and it was such an amazing experience, that we knew we had to keep it going. Shout out to Laila Fahkoury for being a great producer and collaborator, and to our sister exhibit, Palmas De Luna, for being a helping hand.",
+      "This was actually our first ever curation opportunity, and it was such an amazing experience, that we knew we had to keep it going. Shout out to Laila Fakhoury for being a great producer and collaborator, and to our sister exhibit, Palmas De Luna, for being a helping hand.",
      ],  
      images: ["bazaar.jpg","bazaar3.gif",""],
      video: "",
@@ -61,7 +61,7 @@ export const events = [
     mentions: [
       {name: "How Bazaar", link: ""},
       {name: "Riverset Studios", link: ""},
-      {name: "Laila Fahkoury", link: ""},
+      {name: "Laila Fakhoury", link: ""},
       {name: "Palmas De Luna", link: ""},
     ]
     },
@@ -177,8 +177,8 @@ export const events = [
      flyer: "/assets/events/flyers/bigcaaf.JPG",
      location: "Downtown Gainesville, Gainesville, Florida",
      description: "We took to Downtown Gainesville to bring easily our most unorthodox exhibit yet.",
-     about: ["We wish we could take credit for the box truck idea, but alas, Laila, one of the spearheads behind BIG, called us wanting to figure out how we can get another art exhibit going, and after not much brainstorming at all, she illustrated this plan to fashion a couple box trucks into an art exhibit. We're all about pushing the envelope, and creating un-traditional means of engaging with art, so we were just happy that the team was matching our freak. We put out an open call, extended the offer to some other dope artists, and drove the scenic drive up to Gainesville. At first, setup was a bit rocky, and honestly, I didn't really know how we were gonna make this work. But thankfully we managed to pick literally the coolest, most f**k-it-let's-do-it group of artists we could've possibly picked. That, coupled with how scarily willing everyone around us was to help us with absolutely anything and everything we needed. It ended up being a ridiculously fun weekend, and so many people were in and out of the truck from open to close On the second day, they parked the truck offset a small stage they were building just for a band called, They are Gutting a Body of Water, a shoegaze band from Philly. In a matter of a few minutes, a massive crowd formed around the stage, with some people using the truck as the perfect vantage point to watch the show. Huge thanks to all the artists and hands that made that incredibly special weekend possible.", 
-      "For their 5th year in business, the BIG: CAF team took to the heart of Gainesville to use as festival grounds for easily their most abmitious 3-day event yet, using the surrounding bars and streets as stages that featured household names like Earl Sweatshirt, The Alchemist, and Redveil, along with a plethora of local and national acts, each representing their own unique genre of music. Spearheaded by the brilliant minds behind How Bazaar, we got to work with Laila Fahkoury and her team on a truly unorthodox art exhibit.. We'd never been to BIG, let alone Gainesville, and seeing the festival come to life over its course of the weekend was truly something we will never take for granted."],  
+     about: ["We wish we could take credit for the box truck idea, but honestly Laila illustrated the plan to fashion a couple box trucks into an art exhibit. We're all about pushing the envelope, and creating un-traditional means of engaging with art, so we were just happy that the team was matching our freak. We put out an open call, extended the offer to some other dope artists, and drove the scenic drive up to Gainesville. At first, setup was a bit rocky, and honestly, I didn't really know how we were gonna make this work. But thankfully we managed to pick literally the coolest, most f**k-it-let's-do-it group of artists we could've possibly picked. That, coupled with how scarily willing everyone around us was to help us with absolutely anything and everything we needed. It ended up being a ridiculously fun weekend, and so many people were in and out of the truck from open to close On the second day, they parked the truck offset a small stage they were building just for a band called, They are Gutting a Body of Water, a shoegaze band from Philly. In a matter of a few minutes, a massive crowd formed around the stage, with some people using the truck as the perfect vantage point to watch the show. Huge thanks to all the artists and hands that made that incredibly special weekend possible.", 
+      "For their 5th year in business, the BIG: CAF team took to the heart of Gainesville to use as festival grounds for easily their most abmitious 3-day event yet, using the surrounding bars and streets as stages that featured household names like Earl Sweatshirt, The Alchemist, and Redveil, along with a plethora of local and national acts, each representing their own unique genre of music. Spearheaded by the brilliant minds behind How Bazaar, we got to work with Laila Fakhoury and her team on a truly unorthodox art exhibit.. We'd never been to BIG, let alone Gainesville, and seeing the festival come to life over its course of the weekend was truly something we will never take for granted."],  
      images: ["img1.JPEG","img4.jpg",""],
      video: "bigcaaf.mp4",
      date: "April 2026",
@@ -232,7 +232,7 @@ export const events = [
 
     mentions: [
       {name: "BIG: Culture & Arts Festival", link: "https://www.instagram.com/bigcaaf/"},
-      {name: "Laila Fahkoury", link: "https://www.instagram.com/lailoosha/"},
+      {name: "Laila Fakhoury", link: "https://www.instagram.com/lailoosha/"},
       {name: "They Are Gutting A Body Of Water", link: "https://www.instagram.com/tagabowphl/"},
     ]
     },

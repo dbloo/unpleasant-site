@@ -17,7 +17,7 @@ function Navbar() {
             <div className=" lg:px-10  absolute bottom-0 right-0 flex flex-row w-full items-center justify-between ">   
                 <div className=' flex  h-full w-full flex-row items-center justify-between'>
                 <a onClick={() => setIsOpen(false)} href = "/"><img src = "/assets/logo.svg" className="ml-5 lg:size-30 lg:pt-10 pt-5 size-25"></img></a>
-                <div className= {`lg:pt-10 lg:relative absolute lg:bottom-0 lg:left-0  lg:text-lg text-4xl bottom-20  flex-col ${isOpen ? "":""} lg:flex-row flex lg:w-1/6 w-screen text-center  items-center gap-4`}>
+                <div className= {`lg:pt-10 lg:relative absolute lg:bottom-0 lg:left-0  lg:text-lg text-2xl bottom-20  flex-col ${isOpen ? "":""} lg:flex-row flex lg:w-1/6 w-screen text-center  items-center gap-4`}>
                     <a onClick={() => setIsOpen(false)} href="/about" className="px-3 py-2 border-b w-full lg:border-0 border-black hover:text-amber-500 ">About</a>
                     {/* <a onClick={() => setIsOpen(false)} href="/lookbook" className="px-3 py-2 hover:text-amber-500 rounded">Lookbook</a> */}
                     <a onClick={() => setIsOpen(false)} href="/contact" className="px-3 py-2 border-b  w-full lg:border-0 border-black hover:text-amber-500 ">Contact</a>

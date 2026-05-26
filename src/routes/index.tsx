@@ -15,7 +15,7 @@ function Home() {
 
 
   return (
-    <main className="w-screen justify-center items-center  overflow-x-hidden min-h-screen flex flex-col">
+    <main className="w-screen justify-center items-center  overflow-x-hidden  h-screen flex flex-col">
         <section className=' flex flex-col  w-full  h-full lg:p-0 '>
 
           <div className = "overflow-hidden w-full h-full  ">
@@ -39,7 +39,7 @@ function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.13 }} 
 
-            className='mt-10 lg:pl-10'
+            className='mt-10 lg:pl-10 h-full '
           
           >
 
@@ -49,7 +49,7 @@ function Home() {
 
           
 
-    <div className = "  w-screen relative h-full">
+    <div className = "  w-screen relative h-auto">
           <motion.span
             style = {{y: blobY}}
             initial={{ y: -40, opacity: 0 }}
@@ -68,7 +68,7 @@ function Home() {
 
 
           
-          <img src = "/wi.png" className='lg:ml-200 mt-10 lg: w-100'></img>
+          <img src = "/wi.png" className='lg:ml-200 mt-30 lg: w-100'></img>
    
           </div>
 
