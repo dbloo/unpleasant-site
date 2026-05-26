@@ -27,7 +27,7 @@ function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
           
-          className = "lg:pl-10 mt-30 lg:text-8xl text-6xl w-full text-amber-500 font-black">FOR THE ART DEPRIVED.</motion.h1>
+          className = "lg:pl-10 mt-10 lg:text-8xl text-6xl w-full text-amber-500 font-black">FOR THE ART DEPRIVED.</motion.h1>
 
           <motion.p initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
