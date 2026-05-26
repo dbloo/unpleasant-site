@@ -256,11 +256,11 @@ function EventCards () {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 * i +0.05}}
          className="mt-10 w-full h-auto text-xl ">
-            <div className = "bg-white border border-amber-400/40 shadow-md rounded-3xl w-full h-auto flex flex-col p-3">
+            <div className = "bg-white border border-amber-400/40 shadow-md rounded-3xl w-full h-auto flex flex-col p-5">
                 <img className = "rounded-2xl shadow-md" key = {i} src = {event.flyer}></img>
                 <h1 className="mt-5  font-bold text-amber-500">{event.title}</h1>
                 <p className="text-black/30 text-lg italic mt-2">{event.date}</p>
-                <p className="mt-5 text-black">{event.description}</p>
+                <p className="mt-5 text-black text-lg">{event.description}</p>
             <StyledButton to= {`/event/$slug`} params = {{slug: event.slug}} className ="relative mb-4 mt-8 w-full"color="amber-500">Learn More</StyledButton>
             </div>
         </motion.div>

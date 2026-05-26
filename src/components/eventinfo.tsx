@@ -13,7 +13,7 @@ const EventInfo = ({slug}: {slug:string}) => {
 
     return(<>
 
-        <div className="w-full h-auto lg:p-20 p-5 lg:pt-35 pt-30">
+        <div className="w-full h-auto lg:p-20 p-5 lg:pt-35 pt-25">
         <div className = "w-full h-full relative justify-center items-center cursor-pointer hover:text-white">
             
             <ArrowLeft className="absolute top-1 left-1 text-amber-500 z-10 transition-colors" />
