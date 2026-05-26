@@ -15,7 +15,7 @@ function Home() {
 
 
   return (
-    <main className="w-screen justify-center items-center  overflow-x-hidden  h-screen flex flex-col">
+    <main className="w-screen justify-center items-center  overflow-x-hidden  h-auto flex flex-col">
         <section className=' flex flex-col  w-full  h-full lg:p-0 '>
 
           <div className = "overflow-hidden w-full h-full  ">
@@ -27,7 +27,7 @@ function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
           
-          className = "lg:pl-10 mt-20 lg:text-8xl text-6xl w-full text-amber-500 font-black">FOR THE ART DEPRIVED.</motion.h1>
+          className = "lg:pl-10 mt-20 lg:text-8xl text-5xl w-full text-amber-500 font-black">FOR THE ART DEPRIVED.</motion.h1>
 
           <motion.p initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
