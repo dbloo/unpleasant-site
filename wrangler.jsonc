@@ -5,6 +5,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
 
+
+
   "assets": {"directory": ".output/public"},
   
   "d1_databases": [
@@ -15,7 +17,8 @@
       "migrations_dir": "drizzle/migrations"
     }
 
-  ]
+  ],
+
 
   
 
