@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/field"
 
 import { useForm } from "@tanstack/react-form";
-import { sendEmail, submitEmailForm } from '@/serverFunctions/contact'
+import { submitEmailForm } from '@/serverFunctions/contact'
 import { emailFormSchema } from '../lib/validation'
 import { Spinner } from "@/components/ui/spinner";
 
@@ -33,7 +33,6 @@ function Footer () {
         setIsLoading(true);
         try {
             await submitEmailForm({ data: value  as any })
-            sendEmail({data: value as any})
             emailForm.reset()
             setStatus(2)
             setIsLoading(false)
@@ -97,7 +96,7 @@ useEffect(() => {
 
                                 {isInvalid && <FieldError errors = {field.state.meta.errors}/>}
                                 <div className="w-full justify-center text-center">
-                                {status == 1 && <p className = "z-1000 text-red-500 mt-10">An error occurred. Please try again later.</p>}
+                                {status == 1 && <p className = "z-1000 text-white mt-10">An error occurred. Please try again later.</p>}
 
                                 <AnimatePresence>
                                 {showMessage &&  <motion.p

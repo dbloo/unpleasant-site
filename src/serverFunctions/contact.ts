@@ -60,13 +60,8 @@ export const submitEmailForm = createServerFn({method: 'POST'})
     .handler(async (ctx: any) => {
         const parsed = emailSchema.parse(ctx.data)
         await db.insert(emails).values({email: parsed.email})
-        return { success: true }
-    })
 
-  
-export const sendEmail = createServerFn({method: 'POST'})
-.handler(async (ctx: any) => {
-  console.log(ctx.data.email)
+        console.log(ctx.data.email)
 
 
   try{
@@ -93,5 +88,37 @@ export const sendEmail = createServerFn({method: 'POST'})
 
       throw e
     }
+    })
 
-})
+  
+// export const sendEmail = createServerFn({method: 'POST'})
+// .handler(async (ctx: any) => {
+//   console.log(ctx.data.email)
+
+
+//   try{
+
+//     const html = await render(
+//           NewsletterTemplate()
+//         )
+
+//     await resend.emails.send({
+//       from: 'Studio Unpleasant <hello@unplsnt.com>',
+//       to: [`${ctx.data.email}`],
+//       subject: 'You\'re in!',
+//       html: `${html}`
+//     })
+
+//     console.log('email sent successfully')
+
+//     return {success:true}
+
+
+//     }catch (e: any){
+
+//       console.error('Failed to send email: ', e.message, e.code, e.detail)
+
+//       throw e
+//     }
+
+// })
