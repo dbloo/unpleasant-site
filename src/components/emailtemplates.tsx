@@ -86,7 +86,7 @@ export function NewsletterTemplate() {
               margin: '0',
               maxWidth: '420px',
             }}>
-              You're officially on the inside. You'll be the first to know about upcoming exhibits, limited drops, and everything we're cooking up next.
+              You're officially on the inside. You'll be the first to know about upcoming exhibits, open calls, limited drops, and everything we're cooking up next.
             </Text>
           </Section>
  
@@ -133,7 +133,7 @@ export function NewsletterTemplate() {
             </Text>
  
             <Link
-              href="https://unplsnt.com"
+              href="https://www.unplsnt.com"
               style={{
                 fontFamily: font,
                 fontSize: '14px',
@@ -179,7 +179,7 @@ export function NewsletterTemplate() {
               color: '#555555',
               margin: '0 0 20px 0',
             }}>
-              Stay up to date between drops — follow us on social for behind-the-scenes, previews, and whatever else we feel like sharing.
+              Follow us on social for behind-the-scenes, previews, and whatever else we feel like sharing.
             </Text>
  
             <Row>
@@ -226,7 +226,7 @@ export function NewsletterTemplate() {
               margin: '0',
               letterSpacing: '0.02em',
             }}>
-              © Studio Unpleasant. You're receiving this because you signed up at unplsnt.com.{' '}
+              © Studio Unpleasant. You're receiving this because you signed up at www.unplsnt.com.{' '}
               <Link href="#" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'underline' }}>
                 Unsubscribe
               </Link>
