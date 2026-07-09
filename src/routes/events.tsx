@@ -14,7 +14,7 @@ function RouteComponent() {
   
     <section className='lg:p-8 p-5 mb-20 w-full h-auto'>
 
-        <div className='pt-30'>
+        <div className='pt-20'>
         
         <motion.h1 
         
@@ -24,7 +24,7 @@ function RouteComponent() {
 
         className = "font-black text-amber-500 text-6xl lg:text-8xl">Exhibits</motion.h1>
 
-        <div className='flex flex-col lg:flex-row lg:gap-10'>
+        <div className='grid-cols-1 lg:grid-cols-4 grid gap-10 mt-10'>
 
         <EventCards/>
         </div>

@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import {motion} from 'framer-motion'
 
 
@@ -15,22 +15,22 @@ function Navbar() {
         initial={{ y: -720, opacity: 1 }}
     animate={isOpen ? { y:-500, opacity: 1, transition: {type:"spring", stiffness:1000, damping: 100, duration:0.5, ease: "easeInOut"} } :  { y: -700, opacity: 1 }}
 
-        className="h-190  z-1000  fixed  w-full bg-background text-black ">
-            <div className=" lg:px-10  absolute bottom-0 right-0 flex flex-row w-full items-center justify-between ">   
-                <div className=' flex  h-full w-full flex-row items-center justify-between'>
-                <a onClick={() => setIsOpen(false)} href = "/"><img src = "/assets/logo.svg" className="ml-5 lg:size-30 lg:pt-10 pt-5 size-25"></img></a>
-                <div className= {`lg:pt-10 lg:relative absolute lg:bottom-0 lg:left-0  lg:text-lg text-2xl bottom-20 bg-background flex-col ${isOpen ? "":""} lg:flex-row flex lg:w-1/6 w-screen text-center  items-center gap-4`}>
+        className="h-190  z-1000  mt-8 fixed  w-full bg-background text-black ">
+            <div className=" lg:px-10 absolute bottom-0 right-0 flex flex-row w-full items-center justify-between ">   
+                <div className=' flex h-full w-full flex-row items-center justify-between'>
+                <a onClick={() => setIsOpen(false)} href = "/"><img src = "/assets/logo.svg" className="ml-5 lg:size-30 lg:pt-10  size-25"></img></a>
+                <div className= {`lg:pt-10 my-5 lg:relative absolute lg:bottom-0 lg:left-0  lg:text-lg text-2xl bottom-20 bg-background flex-col ${isOpen ? "":""} lg:flex-row flex lg:w-1/6 w-screen text-center  items-center gap-4`}>
                     <a onClick={() => setIsOpen(false)} href="/about" className="px-3 py-2 border-b w-full lg:border-0 border-black hover:text-amber-500 ">About</a>
                     {/* <a onClick={() => setIsOpen(false)} href="/lookbook" className="px-3 py-2 hover:text-amber-500 rounded">Lookbook</a> */}
                     <a onClick={() => setIsOpen(false)} href="/contact" className="px-3 py-2 border-b  w-full lg:border-0 border-black hover:text-amber-500 ">Contact</a>
-                    <a onClick={() => setIsOpen(false)} href="/events" className="px-3 py-2 border-b w-full lg:border-0 border-black hover:text-amber-500 ">Events</a>
+                    <a onClick={() => setIsOpen(false)} href="/events" className="px-3 py-2  border-b w-full lg:border-0 border-black hover:text-amber-500 ">Events</a>
                     </div>
 
 
                     
                 </div>
                 
-                <div className = " mr-5 pt-5 items-center flex flex-row " > 
+                <div className = " mr-5  items-center flex flex-row " > 
                     {/* <ShoppingCart size={35}/>                     */}
                 <div className="flex gap-1 flex-col lg:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <motion.span

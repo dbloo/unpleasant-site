@@ -1,6 +1,70 @@
 import { StyledButton } from "./ui/button"
 import {motion} from "framer-motion"
 export const events = [
+   {title: "Hot Rod",
+     slug: "hot-rod",
+     flyer: "/assets/events/flyers/hotrod.jpg",
+     location: "The Wisteria, Southwest Ranches, Florida",
+     description: "A Car Show and Art Exhibit featuring four local artists alongside four timeless cars.",
+     about: ["Hot Rod featured four artists, Dominic Bloomfield, Sisco Gomez, Cory Van Lew, and 97Wilde, paired with four vintage cars, namely a 1998 Viper GTS, a 1977 Porsche 911, a 1979 Porsche 935, and a Cadillac Seville. This show was an effort to congregate art and car enthusiasts, highlight the throughline of art and automotive design, and cultivate a space where each subculture can observe the history and legacy of each car and it's relationship to it's drivers. Each artists chose a car to pair with, and preemtively created a piece that highlighted the legacy of each car, and the culture surrounding it. We also had a visual projections that featured animations by animators Iksi and Rutamfi. The event also featured a game station with a Playstation 2 and cult-classic racing games like Gran Turismo and Need for Speed, displayed on a collection of CRT TVs. In addition to live sounds by Rumi Juxto and DMI Drisko, we had Good2Go an authentic Jamaican Food truck, and a cash bar to keep everyone fueled.",
+     
+     "This is a show that had been in the works for almost four months. Curated and spearheaded by me, Dominic Bloomfield, it was insane seeing a vision I had in my head actualize to the T. The Wisteria, primarily an indoor/outdoor rustic wedding venue in Southwest Ranches, was the perfect event space for this idea, and everyone really enjoyed the uniqueness of the concept, set in frame by such a gorgeous venue.", ], 
+     images: ["HR.jpg","TW1.jpg",""],
+     video: {file: "hotrod_recap.mp4", vertical: false},
+     date: "June 2026",
+     artists: [
+        
+        {
+        name: "Dominic Bloomfield",
+        picture: "",
+        link: "https://www.instagram.com/dom.ozail",
+     },
+
+     {
+        name: "Sicsooo",
+        picture: "",
+        link: "https://www.instagram.com/sisco00oo/",
+     },
+
+     {
+        name: "97Wilde",
+        picture: "",
+        link: "https://www.instagram.com/rem.brandt_/",
+     },
+
+     {
+        name: "Cory Van Lew",
+        picture: "",
+        link: "https://www.instagram.com/coryvanlew/",
+     },
+
+     {
+        name: "Iksi",
+        picture: "",
+        link: "https://www.instagram.com/iksi.art/",
+     },
+     {
+        name: "Rutamfi",
+        picture: "",
+        link: "https://www.instagram.com/rutamfi/",
+     },
+    
+    ],
+
+    credits: [
+      {name: "Derekalcin", link: ""},
+      {name: "Daga Productions", link: ""}
+    ],
+
+    mentions: [
+      {name: "The Wisteria", link: "https://www.instagram.com/auracopeland_gallery/"},
+      {name: "Chrolik", link: "https://www.instagram.com/chrolik/"},
+      {name: "Devoid Caliber", link: "https://www.instagram.com/devoid_caliber/"},
+      {name: "Rumi Juxto", link: "https://www.instagram.com/rumijuxto/"},
+      {name: "DMI Drisko", link: "https://www.instagram.com/dmi.drisko/"},
+      
+    ]
+    },
 
     {title: "Bazaar a la Carte Miami: How Bazaar x Studio Unpleasant",
      slug: "bazaar-a-la-carte",
@@ -11,7 +75,7 @@ export const events = [
       "This was actually our first ever curation opportunity, and it was such an amazing experience, that we knew we had to keep it going. Shout out to Laila Fakhoury for being a great producer and collaborator, and to our sister exhibit, Palmas De Luna, for being a helping hand.",
      ],  
      images: ["bazaar.jpg","bazaar3.gif",""],
-     video: "",
+     video: {file:"",vertical: false},
      date: "September 2025",
      artists: [
         
@@ -75,7 +139,7 @@ export const events = [
       "About a month or so after our first exhibit, our good friend and collaborator Khami hit us up to work on an exhibit together for an Art Basel show featuring music artists and DJ's, spearheaded by New York filmmaker, OnleVibez. She detailed that it would take place in a bookstore in liberty city, which at first, we struggled to figure out how we were going to install the art, but after checking out the space and working with the owners, we made it work. We had 7 exhibiting artists that brought a piece each, and they complemented the space so beautifully. There were so many books, that each piece managed to complement some of the colors on the shelves. And the space in general, was thoughtfully and beautifully beautifully laid out. It was def a great first entry to our list-to-come of Art Basel shows."
      ],  
      images: ["","",""],
-     video: "vibez.mp4",
+     video: {file:"vibez.mp4",vertical: true},
      date: "December 2025",
      artists: [
         
@@ -131,7 +195,7 @@ export const events = [
      
      "We had done two shows at this point, and while collaborating with other collectives offered us so much perspective and opportunity, we knew we needed to do a show on our own. We reached out to Burgundy.XYZ a local art event and nightlife production company, who was offering a gallery space for three days at an incredibly subsidized rate. We jumped on the opportunity and started planning what would become our first gallery show. It was such an amazing experience for us to put together, and was the first time we felt at home in a space that didn't belong to us. Shout out to Aura Copeland Gallery for being a great host, and to Burgundy.XYZ for being great coordinators.", ], 
      images: ["TW3.JPG","TW1.jpg",""],
-     video: "",
+     video: {file:"",vertical: false},
      date: "March 2026",
      artists: [
         
@@ -172,6 +236,7 @@ export const events = [
     ]
     },
 
+
     {title: "Big: Culture & Arts Festival '26 x Studio Unpleasant",
      slug: "big-caf",  
      flyer: "/assets/events/flyers/bigcaaf.JPG",
@@ -180,7 +245,7 @@ export const events = [
      about: ["We wish we could take credit for the box truck idea, but honestly it was Laila, one of the heads behind the festival, that illustrated the plan to fashion a couple of box trucks into an art exhibit. We're all about pushing the envelope, and creating un-traditional means of engaging with art, so we were just happy that the team was on the same wavelength. We put out an open call, extended the offer to some other dope artists, and drove the scenic drive up to Gainesville. At first, setup was a bit rocky, and honestly, I didn't really know how we were gonna make this work. But thankfully we managed to pick literally the coolest, most f**k-it-let's-do-it group of artists we could've possibly picked. That, coupled with how scarily willing everyone around us was to help us with absolutely anything and everything we needed. It ended up being a ridiculously fun weekend, and so many people were in and out of the truck from open to close On the second day, they parked the truck offset a small stage they were building just for a band called, They are Gutting a Body of Water, a shoegaze band from Philly. In a matter of a few minutes, a massive crowd formed around the stage, with some people using the truck as the perfect vantage point to watch the show. Huge thanks to all the artists and hands that made that incredibly special weekend possible.", 
       "For their 5th year in business, the BIG: CAF team took to the heart of Gainesville to use as festival grounds for easily their most abmitious 3-day event yet, using the surrounding bars and streets as stages that featured household names like Earl Sweatshirt, The Alchemist, and Redveil, along with a plethora of local and national acts, each representing their own unique genre of music. Spearheaded by the brilliant minds behind How Bazaar, we got to work with Laila Fakhoury and her team on a truly unorthodox art exhibit.. We'd never been to BIG, let alone Gainesville, and seeing the festival come to life over its course of the weekend was truly something we will never take for granted."],  
      images: ["img1.JPEG","img4.jpg",""],
-     video: "bigcaaf.mp4",
+     video: {file: "bigcaaf.mp4", vertical: true},
      date: "April 2026",
      artists: [
 
@@ -255,13 +320,13 @@ function EventCards () {
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 * i +0.05}}
-         className="mt-10 w-full h-auto text-xl ">
+         className="w-full h-auto  ">
             <div className = "bg-white border border-amber-400/40 shadow-md rounded-3xl w-full h-auto flex flex-col p-5">
                 <img className = "rounded-2xl shadow-md" key = {i} src = {event.flyer}></img>
-                <h1 className="mt-5  font-bold text-amber-500">{event.title}</h1>
-                <p className="text-black/30 text-lg italic mt-2">{event.date}</p>
-                <p className="mt-5 text-black text-lg">{event.description}</p>
-            <StyledButton to= {`/event/$slug`} params = {{slug: event.slug}} className ="relative mb-4 mt-8 w-full"color="amber-500">Learn More</StyledButton>
+                <h1 className="mt-5  text-xl font-bold text-amber-500">{event.title}</h1>
+                <p className="text-black/30 text-md italic mt-1">{event.date}</p>
+                <p className="mt-5 text-black text-sm">{event.description}</p>
+            <StyledButton to= {`/event/$slug`} params = {{slug: event.slug}} className ="z-10 relative  mt-8 w-full"color="amber-500">Learn More</StyledButton>
             </div>
         </motion.div>
         
