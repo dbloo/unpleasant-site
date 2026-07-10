@@ -60,14 +60,16 @@ useEffect(() => {
    
 
     return (
-        <footer className="p-4 bg-amber-500 -z-1000 w-screen h-screen  text-sm text-black-500">
+        <footer id = "newsletter-signup" className="">
+
+            <section  className = "p-4 bg-amber-500 -z-1000 w-screen h-auto  text-sm text-black-500">
 
             <div className="h-full justify-center items-center text-white">
                 
                 <div className="flex flex-col justify-center items-center w-full">
                     <div className = "text-center w-full">
-                <h1 className = " font-black text-5xl mb-10 mt-10">Stay in the loop.</h1>
-                <p className = " text-xl mb-10 ">Drop your email and we'll let you know about any upcoming events, exhibits, and open calls for art.</p>
+                <h1 className = " font-black lg:text-5xl text-4xl mb-5 mt-10">Stay in the loop.</h1>
+                <p className = " text-lg mb-10 ">Drop your email and we'll let you know about any upcoming events, exhibits, and open calls for art.</p>
                 </div>
 
                 <div className="flex relative mt-10 z-100 lg:w-100 w-full">
@@ -128,7 +130,7 @@ useEffect(() => {
             <p className="">&copy; 2026 Studio Unpleasant. All rights reserved.</p>
             </div>
             </div>
-
+            </section>
             
         </footer>
     );

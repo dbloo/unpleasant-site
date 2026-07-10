@@ -77,6 +77,7 @@ function StyledButton({
   color,
   params,
   to,
+  hash,
   type,
   onClick,
 }: React.ComponentProps<"button"> &
@@ -84,6 +85,7 @@ function StyledButton({
     asChild?: boolean
     to?:string
     params?: any
+    hash?: string
   
   }) {
 
@@ -121,7 +123,7 @@ function StyledButton({
                       className="relative inline-block z-10 w-full"
                         
                         >
-                        <Link params= {params} to ={to}><Button type = {type} onClick = {onClick} variant = "styled" className = {`${className }   z-10 select-none border border-${color} text-${color} `}>{children}</Button></Link>
+                        <Link params= {params} hash = {hash} to ={to}><Button type = {type} onClick = {onClick} variant = "styled" className = {`${className }   z-10 select-none border border-${color} text-${color} `}>{children}</Button></Link>
                         </motion.span>
                         <Button 
                         aria-hidden="true"

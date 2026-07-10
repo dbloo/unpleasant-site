@@ -22,7 +22,7 @@ function RouteComponent() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
 
-        className = "font-black text-amber-500 text-6xl lg:text-8xl">Exhibits</motion.h1>
+        className = "font-black text-amber-500 text-6xl lg:text-8xl">Events</motion.h1>
 
         <div className='grid-cols-1 lg:grid-cols-4 grid gap-10 mt-10'>
 

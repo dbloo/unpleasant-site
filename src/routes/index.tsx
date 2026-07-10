@@ -12,6 +12,12 @@ function Home() {
   const blob2Y = useTransform(scrollY, [0, 400], [0, 0], { clamp: false })
 
  
+  function scrollToNewsletter() {
+  document
+    .getElementById('newsletter-signup')
+    ?.scrollIntoView({ behavior: 'smooth' })
+}
+
 
 
   return (
@@ -43,7 +49,7 @@ function Home() {
           
           >
 
-                      <StyledButton to = "/events" color = "amber-500" className = "">View Our Past Exhibits</StyledButton>
+                      <a ><StyledButton onClick={scrollToNewsletter} color = "amber-500" className = "">Sign up for our Newsletter</StyledButton></a>
                       </motion.div>
           </div>
 
